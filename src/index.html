@@ -13,7 +13,10 @@
   <div class="container">
     <div class="header">
       <div class="login"></div>
+      Login
       <div class="stats"></div>
+      <p>Total songs played</p>
+      <p>Total time listened</p>
     </div>
     <div class="player-container">
       <div class="controls">
@@ -64,17 +67,35 @@
         <button class="playlist-clear"></button>
       </div>
       <div class="songs">
+        <h6 class="songs-header">
+          Songs
+        </h6>
         <ul class="songs-list">
-          <li>
-            1. We Were Promised Jetpacks - Quiet Little Voices 4:21
+          <li class="song-info">
+            <div class="index">
+              1.
+            </div>
+            <div class="song">
+              We Were Promised Jetpacks - Quite Little Voices
+            </div>
+            <div class="song-time">
+              4:21
+            </div>
           </li>
-          <li>
-            1. We Were Promised Jetpacks - Quiet Little Voices 4:21
-          </li>
-
+          <li class="song-info">
+              <div class="index">
+                1.
+              </div>
+              <div class="song">
+                We Were Promised Jetpacks - Quite Little Voices
+              </div>
+              <div class="song-time">
+                4:21
+              </div>
+            </li>
         </ul>
         <div class="songs-utility">
-          <div class="songs-orderBy"></div>
+          <button class="songs-orderBy">order songs by</button>
           <div class="songs-total-time">
             0:00 / 80:00
           </div>
@@ -85,17 +106,16 @@
 
   <style>
     .container {
-      margin-left: 25%;
-      margin-right: 25%;
+      margin-left: 10%;
+      margin-right: 10%;
       max-width: 1000px;
       height: 100vh;
       background: white;
       display: grid;
-      grid-gap: 50px;
+      grid-gap: 20px;
       grid-template-columns: 1fr;
       grid-template-rows: 2fr 8fr;
-      grid-template-areas: "header"
-                 "player"
+      grid-template-areas: "header" "player"
     }
 
     .header {
@@ -112,34 +132,69 @@
       grid-gap: 10px;
       grid-template-columns: 1fr 2fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
-      grid-template-areas: "controls   visualisation" 
-                           "playlists  visualisation" 
-                           "songs      visualisation" 
-                           "songs      equalizer";
+      grid-template-areas: "controls   visualisation" "playlists  visualisation" "songs      visualisation" "songs      equalizer";
     }
 
-     .controls {
+    .controls {
       grid-area: controls;
       /* display: grid; */
     }
 
-     .visualisation {
+    .visualisation {
       grid-area: visualisation;
     }
 
-     .equalizer {
+    .equalizer {
       grid-area: equalizer;
     }
 
-     .playlists {
+    .playlists {
       grid-area: playlists;
     }
 
-     .songs {
-      grid-area: songs;
+    .playlists-list {
+      padding: 2px;
+      list-style-type: none;
     }
 
+    .songs {
+      grid-area: songs;
+      display: grid;
+      grid-template-rows: 25px 4fr 1fr;
+      grid-template-areas: 
+      "songs-header"
+      "songs" "utility";
+      border: 1px solid goldenrod; 
+    }
 
+    .songs-header {
+      grid-area: songs-header;
+      justify-self: center;
+      align-self: center;
+    }
+
+    .songs-list {
+      align-items:flex-start;
+      grid-area: songs;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      font-size: 10px;
+      padding: 2px;
+      list-style-type: none;
+
+    }
+
+    .song-info {
+      display: grid;
+      grid-template-columns: 1fr 8fr 1fr;
+    }
+
+    .songs-utility {
+      grid-area: utility;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
   </style>
 </body>
 
