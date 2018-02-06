@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Music Player</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./index.css" type="text/css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="login"></div>
+      <div class="stats"></div>
+    </div>
+    <div class="player-container">
+      <div class="controls">
+        <div class="display-window"></div>
+        <div class="song-info">
+          1. We Were Promised Jetpacks - Quite Little Voices
+        </div>
+        <button class="volume-control"></button>
+        <button class="control-buttons"></button>
+        <button class="previous"></button>
+        <button class="play"></button>
+        <button class="pause"></button>
+        <button class="next"></button>
+        <button class="stop"></button>
+        <!-- <button class="show-playlist"></button> -->
+        <button class="shuffle"></button>
+        <button class="repeat"></button>
+      </div>
+      <div class="visualisation">
+      </div>
+      <div class="equalizer">
+        <div class="eq-representation"></div>
+        <div class="eq-controls">
+          <div class="eq-control-all"></div>
+          <div class="eq-60"></div>
+          <div class="eq-170"></div>
+          <div class="eq-30"></div>
+          <div class="eq-600"></div>
+          <div class="eq-1k"></div>
+          <div class="eq-3k"></div>
+          <div class="eq-6k"></div>
+          <div class="eq-12k"></div>
+          <div class="eq-14k"></div>
+          <div class="eq-16k"></div>
+        </div>
+      </div>
+      <div class="playlists">
+        <ul class="playlists-list">
+          <li class="playlist-info">
+            <p>
+              Discover Weekly songs: 20 time: 80 minutes
+            </p>
+            <p> Created by: cjwesstrom
+            </p>
+          </li>
+        </ul>
+        <button class="playlist-load"></button>
+        <button class="playlist-clear"></button>
+      </div>
+      <div class="songs">
+        <ul class="songs-list">
+          <li>
+            1. We Were Promised Jetpacks - Quiet Little Voices 4:21
+          </li>
+          <li>
+            1. We Were Promised Jetpacks - Quiet Little Voices 4:21
+          </li>
+
+        </ul>
+        <div class="songs-utility">
+          <div class="songs-orderBy"></div>
+          <div class="songs-total-time">
+            0:00 / 80:00
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .container {
+      margin-left: 25%;
+      margin-right: 25%;
+      max-width: 1000px;
+      height: 100vh;
+      background: white;
+      display: grid;
+      grid-gap: 50px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 2fr 8fr;
+      grid-template-areas: "header"
+                 "player"
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-area: header;
+      background: lightsteelblue;
+    }
+
+    .player-container {
+      display: grid;
+      background: gray;
+      grid-area: player;
+      grid-gap: 10px;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "controls   visualisation" 
+                           "playlists  visualisation" 
+                           "songs      visualisation" 
+                           "songs      equalizer";
+    }
+
+     .controls {
+      grid-area: controls;
+      /* display: grid; */
+    }
+
+     .visualisation {
+      grid-area: visualisation;
+    }
+
+     .equalizer {
+      grid-area: equalizer;
+    }
+
+     .playlists {
+      grid-area: playlists;
+    }
+
+     .songs {
+      grid-area: songs;
+    }
+
+
+  </style>
+</body>
+
+</html>
