@@ -73,27 +73,46 @@
   grid-area: controls;
   border: 1px solid gray;
   display: grid;
-  grid-template-rows: 4fr 1fr;
-  grid-template-areas: "top" "bottom";
+  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "song-summary"
+                       "time"
+                       "buttons";
 }
 
+.song-summary {
+  grid-area: song-summary;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "display-window current-song"
+             "display-window volume"
+}
+
+
 .display-window {
-  grid-area: top;
+  grid-area: display-window;
 }
 
 .player-song-info {
-  grid-area: top;
+  grid-area: current-song;
   background:
 }
 
 .volume-control {
-  grid-area: top;
+  grid-area: volume;
+  align-self: end;
+  justify-self: center;
+}
+
+.song-time-left {
+  grid-area: time;
   align-self: end;
   justify-self: center;
 }
 
 .player-control-buttons {
-  grid-area: bottom;
+  grid-area: buttons;
   display: grid;
   grid-gap: 1px;
   grid-template-columns: repeat(7, 1fr);
