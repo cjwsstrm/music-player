@@ -147,13 +147,17 @@
     }
 
     .player-container {
+      color: lightgray;
       display: grid;
       background: rgb(56, 58, 70);
       grid-area: player;
       grid-gap: 10px;
       grid-template-columns: 2fr 3fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
-      grid-template-areas: "controls   visualisation" "equalizer  visualisation" "playlists      songs" "playlists     songs";
+      grid-template-areas: "controls   visualisation" 
+                           "equalizer  visualisation" 
+                           "playlists  songs" 
+                           "playlists  songs";
     }
 
     .controls {
@@ -226,7 +230,6 @@
     }
 
     h6 {
-      color: lightgray;
       justify-self: center;
       align-self: center;
     }
