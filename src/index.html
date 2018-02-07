@@ -36,6 +36,7 @@
         <button class="repeat"></button>
       </div>
       <div class="visualisation">
+        <img src="./maxresdefault.jpg" alt="Mountain View">
       </div>
       <div class="equalizer">
         <div class="eq-representation"></div>
@@ -54,6 +55,9 @@
         </div>
       </div>
       <div class="playlists">
+        <h6 class="playlists-header">
+          ====== Playlists ======
+        </h6>
         <ul class="playlists-list">
           <li class="playlist-info">
             <p>
@@ -63,8 +67,10 @@
             </p>
           </li>
         </ul>
-        <button class="playlist-load"></button>
-        <button class="playlist-clear"></button>
+        <div class="playlist-utility">
+          <button class="playlist-load"></button>
+          <button class="playlist-clear"></button>
+        </div>
       </div>
       <div class="songs">
         <h6 class="songs-header">
@@ -83,16 +89,16 @@
             </div>
           </li>
           <li class="song-info">
-              <div class="index">
-                1.
-              </div>
-              <div class="song">
-                We Were Promised Jetpacks - Quite Little Voices
-              </div>
-              <div class="song-time">
-                4:21
-              </div>
-            </li>
+            <div class="index">
+              1.
+            </div>
+            <div class="song">
+              We Were Promised Jetpacks - Quite Little Voices
+            </div>
+            <div class="song-time">
+              4:21
+            </div>
+          </li>
         </ul>
         <div class="songs-utility">
           <button class="songs-orderBy">order by</button>
@@ -132,13 +138,18 @@
       grid-gap: 10px;
       grid-template-columns: 2fr 3fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
-      grid-template-areas: "controls   visualisation" "playlists  visualisation" "songs      visualisation" "songs      equalizer";
+      grid-template-areas: "controls   visualisation" "equalizer  visualisation" "playlists      songs" ".     songs";
     }
 
     .controls {
       grid-area: controls;
       border: 1px solid gray;
       /* display: grid; */
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
     }
 
     .visualisation {
@@ -153,32 +164,44 @@
 
     .playlists {
       grid-area: playlists;
+      display:grid;
+      grid-template-areas: "playlists-header" "playlists" "playlists-utility";
       border: 1px solid gray;
     }
 
+    .playlists-header {
+      grid-area: playlists-header;
+    }
+
     .playlists-list {
+      grid-area: playlists;
       padding: 2px;
       list-style-type: none;
       display: grid;
       color: lime;
     }
 
+    .playlists-utility {
+      grid-area: playlists-utility;
+    }
+
     .songs {
-      color: lightgray;
       grid-area: songs;
       display: grid;
       grid-template-rows: 25px 4fr 1fr;
-      grid-template-areas: 
-      "songs-header"
-      "songs" "utility";
+      grid-template-areas: "songs-header" "songs" "utility";
       border: 1px solid gray;
       padding: 0 10px;
     }
 
-    .songs-header {
-      grid-area: songs-header;
+    h6 {
+       color: lightgray;
       justify-self: center;
       align-self: center;
+    }
+
+    .songs-header {
+      grid-area: songs-header;
     }
 
     .songs-list {
