@@ -6,6 +6,7 @@
   <title>Music Player</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <link rel="stylesheet" href="./index.css" type="text/css" />
 </head>
 
@@ -26,19 +27,35 @@
     <div class="player-container">
       <div class="controls">
         <div class="display-window"></div>
-        <div class="song-info">
+        <div class="song-info player-song-info">
           1. We Were Promised Jetpacks - Quite Little Voices
         </div>
-        <button class="volume-control"></button>
-        <button class="player-control-buttons"></button>
-        <button class="previous"></button>
-        <button class="play"></button>
-        <button class="pause"></button>
-        <button class="next"></button>
-        <button class="stop"></button>
-        <!-- <button class="show-playlist"></button> -->
-        <button class="shuffle"></button>
-        <button class="repeat"></button>
+        <div class="volume-control"></div>
+        <div class="player-control-buttons">
+          <button class="previous">
+              <i class="fas fa-step-backward"></i>
+          </button>
+          <button class="play">
+              <i class="fas fa-play"></i>
+          </button>
+          <button class="pause">
+              <i class="fas fa-pause"></i>
+          </button>
+          <button class="next">
+              <i class="fas fa-step-forward"></i>
+          </button>
+          <button class="stop">
+              <i class="fas fa-stop"></i>
+          </button>
+          <!-- <button class="show-playlist"></button> -->
+          <button class="shuffle">
+              <i class="fas fa-random"></i>
+          </button>
+          <button class="repeat">
+            <i class="fas fa-redo"></i>
+            <!-- <i class="fas fa-repeat-1"></i> -->
+          </button>
+        </div>
       </div>
       <div class="visualisation">
         <img src="./maxresdefault.jpg" alt="Mountain View">

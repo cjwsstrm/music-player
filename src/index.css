@@ -72,7 +72,30 @@
 .controls {
   grid-area: controls;
   border: 1px solid gray;
-  /* display: grid; */
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  grid-template-areas: "top" "bottom";
+}
+
+.display-info {
+  grid-area: top;
+}
+
+.player-song-info {
+  grid-area: top;
+}
+
+.volume-control {
+  grid-area: top;
+}
+
+.player-control-buttons {
+  grid-area: bottom;
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: space-between;
+  /* align-items: start; */
 }
 
 img {
