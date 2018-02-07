@@ -25,7 +25,7 @@
           1. We Were Promised Jetpacks - Quite Little Voices
         </div>
         <button class="volume-control"></button>
-        <button class="control-buttons"></button>
+        <button class="player-control-buttons"></button>
         <button class="previous"></button>
         <button class="play"></button>
         <button class="pause"></button>
@@ -60,11 +60,26 @@
         </h6>
         <ul class="playlists-list">
           <li class="playlist-info">
-            <p>
-              Discover Weekly songs: 20 time: 80 minutes
-            </p>
-            <p> Created by: cjwesstrom
-            </p>
+            <div class="playlist-index">
+              1.
+            </div>
+            <div class="playlist">
+              Discover Weekly - songs: 20 - By: cjwesstrom
+            </div>
+            <div class="playlist-time">
+              80:00
+            </div>
+          </li>
+          <li class="playlist-info">
+            <div class="playlist-index">
+              1.
+            </div>
+            <div class="playlist">
+              Discover Weekly - songs: 20 - By: Spotify
+            </div>
+            <div class="playlist-time">
+              80:00
+            </div>
           </li>
         </ul>
         <div class="playlist-utility">
@@ -78,7 +93,7 @@
         </h6>
         <ul class="songs-list">
           <li class="song-info">
-            <div class="index">
+            <div class="song-index">
               1.
             </div>
             <div class="song">
@@ -138,7 +153,7 @@
       grid-gap: 10px;
       grid-template-columns: 2fr 3fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
-      grid-template-areas: "controls   visualisation" "equalizer  visualisation" "playlists      songs" ".     songs";
+      grid-template-areas: "controls   visualisation" "equalizer  visualisation" "playlists      songs" "playlists     songs";
     }
 
     .controls {
@@ -164,9 +179,11 @@
 
     .playlists {
       grid-area: playlists;
-      display:grid;
+      display: grid;
+      grid-auto-rows: 25px 4fr 1fr;
       grid-template-areas: "playlists-header" "playlists" "playlists-utility";
       border: 1px solid gray;
+      padding: 0 10px;
     }
 
     .playlists-header {
@@ -179,6 +196,20 @@
       list-style-type: none;
       display: grid;
       color: lime;
+      font-size: 10px;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(10, 1fr);
+      background: black;
+      font-size: 10px;
+      padding: 2px;
+      list-style-type: none;
+      border: 2px solid gray;
+    }
+
+    .playlist-info {
+      display: grid;
+      color: lime;
+      grid-template-columns: auto 8fr auto;
     }
 
     .playlists-utility {
@@ -195,7 +226,7 @@
     }
 
     h6 {
-       color: lightgray;
+      color: lightgray;
       justify-self: center;
       align-self: center;
     }
