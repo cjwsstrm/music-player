@@ -20,8 +20,8 @@
         Music Player
       </div>
       <div class="header-stats">
-        <p>Total songs played</p>
-        <p>Total time listened</p>
+        <p>Total songs played: 10</p>
+        <p>Total time listened: 45:00</p>
       </div>
     </div>
     <div class="player-container">
@@ -38,7 +38,7 @@
           </div>
         </div>
         <div class="song-time-left">
-          <input type="range">
+          <input class="song-time" type="range">
         </div>
         <div class="player-control-buttons">
           <button class="previous">
@@ -72,7 +72,9 @@
       <div class="equalizer">
         <div class="eq-representation"></div>
         <div class="eq-controls">
-          <div class="eq-control-all"></div>
+          <div class="eq-control-all slider-wrapper">
+              <input type="range">
+          </div>
           <div class="eq-60"></div>
           <div class="eq-170"></div>
           <div class="eq-30"></div>

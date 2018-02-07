@@ -1,3 +1,4 @@
+/* Main container */
 .container {
   margin-left: 10%;
   margin-right: 10%;
@@ -11,6 +12,7 @@
   grid-template-areas: "header" "player"
 }
 
+/* Header styling */
 .header {
   grid-area: header;
   display: grid;
@@ -40,7 +42,7 @@
   justify-items: start;
   align-items: center;
 }
-
+/* Main player container */
 .player-container {
   padding: 5px;
   color: #8b8c9a;
@@ -69,6 +71,7 @@
   }
 }
 
+/* Controls */
 .controls {
   grid-area: controls;
   border: 1px solid gray;
@@ -81,26 +84,34 @@
 }
 
 .song-summary {
+  border: inherit;
   grid-area: song-summary;
   display: grid;
+  /* grid-gap: 4px; */
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
   grid-template-areas: "display-window current-song"
              "display-window volume"
 }
 
 
 .display-window {
+  border: inherit;
   grid-area: display-window;
+  margin: 5px;
+  background: black;
 }
 
 .player-song-info {
+  border: inherit;
   grid-area: current-song;
-  background:
+  margin: 5px;
+  background: black;
 }
 
 .volume-control {
   grid-area: volume;
+  margin: 5px;
   align-self: end;
   justify-self: center;
 }
@@ -109,6 +120,10 @@
   grid-area: time;
   align-self: end;
   justify-self: center;
+}
+
+input.song-time {
+  width: 285px;
 }
 
 .player-control-buttons {
@@ -125,16 +140,37 @@ img {
   max-height: 100%;
 }
 
+/* Visualisation */
 .visualisation {
+  border: 1px solid gray;
   grid-area: visualisation;
-  border: 1px solid gray;
 }
 
+/* Equalizer */
 .equalizer {
-  grid-area: equalizer;
   border: 1px solid gray;
+  grid-area: equalizer;
+  display: grid;
+  grid-template-columns: 2fr repeat(10, 1fr);
+  grid-template-rows: 4fr 1fr;
 }
 
+.slider-wrapper {
+  display: inline-block;
+  /* width: 20px; */
+  height: 150px;
+  padding: 0;
+}
+
+.slider-wrapper input {
+  width: 75px;
+  /* height: 20px; */
+  margin: 0;
+  transform-origin: 75px 75px;
+  transform: rotate(-90deg);
+}
+
+/*  Playlist */
 .playlists {
   grid-area: playlists;
   display: grid;
@@ -172,6 +208,7 @@ img {
   grid-area: playlists-utility;
 }
 
+/* Songs */
 .songs {
   grid-area: songs;
   display: grid;
