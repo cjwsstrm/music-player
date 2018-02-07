@@ -77,16 +77,19 @@
   grid-template-areas: "top" "bottom";
 }
 
-.display-info {
+.display-window {
   grid-area: top;
 }
 
 .player-song-info {
   grid-area: top;
+  background:
 }
 
 .volume-control {
   grid-area: top;
+  align-self: end;
+  justify-self: center;
 }
 
 .player-control-buttons {
@@ -94,7 +97,7 @@
   display: grid;
   grid-gap: 1px;
   grid-template-columns: repeat(7, 1fr);
-  justify-items: space-between;
+  justify-items: space-around;
   /* align-items: start; */
 }
 
