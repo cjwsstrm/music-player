@@ -13,7 +13,7 @@
   <div class="container">
     <div class="header">
       <div class="login"></div>
-      Login
+      Login to your Spotify account
       <div class="stats"></div>
       <p>Total songs played</p>
       <p>Total time listened</p>
@@ -83,8 +83,8 @@
           </li>
         </ul>
         <div class="playlist-utility">
-          <button class="playlist-load"></button>
-          <button class="playlist-clear"></button>
+          <button class="playlist-load">Load Playlist</button>
+          <button class="playlist-clear">Clear Playlist</button>
         </div>
       </div>
       <div class="songs">
@@ -140,9 +140,9 @@
     }
 
     .header {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
       grid-area: header;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
       background: rgba(176, 196, 222, 0.5);
     }
 
@@ -154,10 +154,7 @@
       grid-gap: 10px;
       grid-template-columns: 2fr 3fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
-      grid-template-areas: "controls   visualisation" 
-                           "equalizer  visualisation" 
-                           "playlists  songs" 
-                           "playlists  songs";
+      grid-template-areas: "controls   visualisation" "equalizer  visualisation" "playlists  songs" "playlists  songs";
     }
 
     .controls {
@@ -199,14 +196,12 @@
       padding: 2px;
       list-style-type: none;
       display: grid;
-      color: lime;
       font-size: 10px;
       grid-template-columns: 1fr;
       grid-template-rows: repeat(10, 1fr);
       background: black;
       font-size: 10px;
       padding: 2px;
-      list-style-type: none;
       border: 2px solid gray;
     }
 
