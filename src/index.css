@@ -7,7 +7,7 @@
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr 8fr;
+  grid-template-rows: 100px 1fr;
   grid-template-areas: "header" "player"
 }
 
@@ -43,9 +43,9 @@
 
 .player-container {
   padding: 5px;
-  color: lightgray;
+  color: #8b8c9a;
   display: grid;
-  background: rgb(56, 58, 70);
+  background: #2a2941;
   grid-area: player;
   grid-gap: 10px;
   grid-template-columns: 2fr 3fr;
@@ -93,7 +93,7 @@ img {
 .playlists {
   grid-area: playlists;
   display: grid;
-  grid-auto-rows: 25px 4fr 1fr;
+  grid-template-rows: 25px 4fr 1fr;
   grid-template-areas: "playlists-header" "playlists" "playlists-utility";
   border: 1px solid gray;
   padding: 0 10px;
@@ -119,7 +119,7 @@ img {
 
 .playlist-info {
   display: grid;
-  color: lime;
+  color: #52e300;
   grid-template-columns: auto 8fr auto;
 }
 
@@ -161,7 +161,7 @@ h6 {
 
 .song-info {
   display: grid;
-  color: lime;
+  color: #52e300;
   grid-template-columns: auto 8fr auto;
 }
 
