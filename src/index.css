@@ -45,6 +45,8 @@
 /* Main player container */
 .player-container {
   padding: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
   color: #8b8c9a;
   display: grid;
   background: #2a2941;
