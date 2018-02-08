@@ -84,8 +84,8 @@
 }
 
 .song-summary {
-  border: inherit;
   grid-area: song-summary;
+  border: inherit;
   display: grid;
   /* grid-gap: 4px; */
   grid-template-columns: 2fr 1fr;
@@ -96,15 +96,42 @@
 
 
 .display-window {
-  border: inherit;
   grid-area: display-window;
+  border: inherit;
   margin: 5px;
   background: black;
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas: "play-pause time-left"
+                       "visuals visuals"
+}
+
+
+.play-pause {
+  grid-area: play-pause;
+  margin: inherit;
+}
+
+.time-left {
+  grid-area: time-left;
+  margin: inherit;
+  display: grid;
+  justify-content: end;
+
+}
+.mini-spectogram {
+  grid-area: visuals;
+  margin: inherit;
+  display: grid;
+  align-content: end;
+
 }
 
 .player-song-info {
-  border: inherit;
   grid-area: current-song;
+  border: inherit;
   margin: 5px;
   background: black;
 }
@@ -116,6 +143,7 @@
   justify-self: center;
 }
 
+/* Song played time slider */
 .song-time-left {
   grid-area: time;
   align-self: end;
