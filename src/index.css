@@ -2,7 +2,7 @@
 .container {
   margin: auto;
   max-width:960px;
-  height: 750px auto;
+  height: 50vh;
   background: white;
   display: grid;
   grid-gap: 20px;
@@ -44,6 +44,7 @@
 }
 /* Main player container */
 .player-container {
+  height: auto;
   padding: 5px;
   border: 1px solid gray;
   border-radius: 5px;
@@ -93,7 +94,7 @@
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 2fr 1fr;
   grid-template-areas: "display-window current-song"
-             "display-window volume"
+                       "display-window volume"
 }
 
 
@@ -126,8 +127,8 @@
 .mini-spectogram {
   grid-area: visuals;
   margin: inherit;
-  display: grid;
-  align-content: end;
+  /* display: grid; */
+  /* align-content: end; */
 
 }
 
@@ -309,7 +310,7 @@ h6 {
 }
 
 
-#canvas {
+#canvas-main-visualisation {
   width: 100%;
   height: auto;
   /* max-height: 400px; */

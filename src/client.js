@@ -2,7 +2,7 @@
 var analyser, canvas, ctx, random = Math.random, circles = [];
 
 window.onload = function () {
-    canvas = document.getElementById('canvas');
+    canvas = document.getElementById('canvas-main-visualisation');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     ctx = canvas.getContext('2d');
@@ -13,7 +13,7 @@ window.onload = function () {
 
 function setupWebAudio() {
     var audio = document.createElement('audio');
-    audio.src = 'bloc1.mp3';
+    audio.src = 'deathcab1.mp3';
     // audio.controls = 'true';
     document.body.appendChild(audio);
     audio.style.width = window.innerWidth + 'px';
