@@ -20,17 +20,18 @@
   grid-template-areas: "login logo stats";
   background: rgba(176, 196, 222, 0.5);
   justify-content: center;
+  justify-items: center;
 }
 
 .header-login {
-  display: grid;
+  /* display: grid; */
   grid-area: login;
   justify-items: center;
   align-items: center;
 }
 
 .header-logo {
-  display: grid;
+  /* display: grid; */
   grid-area: logo;
   justify-content: center;
   align-content: center;
@@ -38,7 +39,7 @@
 }
 
 .header-stats {
-  grid-area: stats;
+  /* grid-area: stats; */
   justify-items: start;
   align-items: center;
 }
