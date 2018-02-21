@@ -14,9 +14,9 @@ window.onload = function () {
 function setupWebAudio() {
     var audio = document.createElement('audio');
     audio.src = './fantomas1.mp3';
-    // audio.controls = 'true';
+    audio.controls = 'true';
     document.body.appendChild(audio);
-    audio.style.width = window.innerWidth + 'px';
+    audio.style.width = 400 + 'px';
 
     var audioContext = new window.AudioContext();
     analyser = audioContext.createAnalyser();
