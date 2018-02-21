@@ -1,15 +1,15 @@
 /* Main container */
 .container {
-  margin-left: 10%;
-  margin-right: 10%;
-  max-width: 1000px;
-  height: 100vh;
+  margin: auto;
+  max-width:960px;
+  height: 750px auto;
   background: white;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr;
   grid-template-rows: 100px 1fr;
-  grid-template-areas: "header" "player"
+  grid-template-areas: "header" "player";
+  justify-content: center;
 }
 
 /* Header styling */
@@ -165,11 +165,6 @@ input.song-time {
   /* align-items: start; */
 }
 
-img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
 /* Visualisation */
 .visualisation {
   border: 1px solid gray;
@@ -199,7 +194,7 @@ img {
   display: grid;
   grid-template-columns: 2fr repeat(10, 1fr);
   justify-items: center;
-  align-items: end;  
+  align-items: center;
 }
 
 .slider-wrapper {
@@ -311,4 +306,11 @@ h6 {
 .songs-total-time {
   grid-area: time;
   justify-self: end;
+}
+
+
+#canvas {
+  width: 100%;
+  height: auto;
+  /* max-height: 400px; */
 }
