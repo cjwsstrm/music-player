@@ -104,6 +104,26 @@
                        "playback-speed volume"
 }
 
+.display-window {
+  grid-area: current-song;
+  border: inherit;
+  margin: 5px;
+  background: black;
+  color: #52e300;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas: "currently-playing currently-playing"
+                       "play-pause time-left";
+  align-items: center;
+}
+
+.currently-playing {
+  grid-area: currently-playing;
+  
+ /* add scrolling css stuff here */
+}
+
 .play-pause {
   grid-area: play-pause;
   color: gray;
@@ -125,14 +145,6 @@
   align-content: end;
 } */
 
-.display-window {
-  grid-area: current-song;
-  display: grid;
-  border: inherit;
-  margin: 5px;
-  background: black;
-  color: #52e300;
-}
 
 .playback-speed {
   grid-area: playback-speed;
@@ -171,6 +183,7 @@ input.song-time {
 .visualisation {
   border: 1px solid gray;
   grid-area: visualisation;
+  align-self: end;
 }
 
 /* Equalizer */
@@ -179,7 +192,7 @@ input.song-time {
   grid-area: equalizer;
   display: grid;
   grid-template-columns: 2fr repeat(10, 1fr);
-  justify-items: center;
+  /* justify-items: center; */
   align-items: center;
 }
 

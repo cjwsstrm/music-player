@@ -13,7 +13,7 @@ window.onload = function () {
 
 function setupWebAudio() {
     var audio = document.createElement('audio');
-    audio.src = './fantomas1.mp3';
+    audio.src = './bloc1.mp3';
     audio.controls = 'true';
     document.body.appendChild(audio);
     audio.style.width = 400 + 'px';
