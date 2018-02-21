@@ -116,13 +116,27 @@
   grid-template-areas: "currently-playing currently-playing"
                        "play-pause time-left";
   align-items: center;
+  overflow: hidden;
 }
 
 .currently-playing {
   grid-area: currently-playing;
-  
- /* add scrolling css stuff here */
-}
+  transform:translateX(100%);
+  animation: display-window 15s linear infinite;
+  }
+
+@keyframes display-window {
+  0%   { 
+  -moz-transform: translateX(100%); /* Firefox bug fix */
+  -webkit-transform: translateX(100%); /* Firefox bug fix */
+  transform: translateX(100%); 		
+  }
+  100% { 
+  -moz-transform: translateX(-100%); /* Firefox bug fix */
+  -webkit-transform: translateX(-100%); /* Firefox bug fix */
+  transform: translateX(-100%); 
+  }
+ }
 
 .play-pause {
   grid-area: play-pause;
