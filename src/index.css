@@ -180,7 +180,7 @@
   justify-self: center;
 }
 
-input.song-time {
+input[type=range].song-time {
   width: 285px;
 }
 
@@ -218,8 +218,8 @@ input.song-time {
 }
 
 .slider-wrapper input {
-  width: 75px;
-  height: 20px;
+  width: 150px;
+  height: 25px;
   margin: 0;
   transform-origin: 75px 75px;
   transform: rotate(-90deg);
