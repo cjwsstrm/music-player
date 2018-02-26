@@ -1,0 +1,329 @@
+/* Main container */
+.App {
+  margin: auto;
+  max-width:960px;
+  height: 100%vh;
+  background: white;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas: "header" 
+                       "player";
+  justify-content: center;
+}
+
+/* Header styling */
+.header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  grid-template-areas: "login logo stats";
+  background: rgba(176, 196, 222, 0.5);
+  /* justify-content: center; */
+  justify-items: center;
+  align-items: center;
+}
+
+.header-login {
+  /* display: grid; */
+  grid-area: login;
+  justify-items: center;
+  align-items: center;
+}
+
+.header-logo {
+  /* display: grid; */
+  grid-area: logo;
+  justify-content: center;
+  align-content: center;
+  font-size: 20px;
+}
+
+.header-stats {
+  /* grid-area: stats; */
+  justify-items: start;
+  align-items: center;
+}
+/* Main player container */
+.player-container {
+  height: auto;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  color: #8b8c9a;
+  display: grid;
+  background: #2a2941;
+  grid-area: player;
+  grid-gap: 10px;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "controls   visualisation" 
+                       "equalizer  visualisation" 
+                       "playlists  songs" 
+                       "playlists  songs";
+  font-size: 12px;
+}
+
+@media (max-width: 800px) {
+  .player-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "visualisation"
+    "controls"
+    "equalizer"
+    "playlists"
+    "songs"
+  }
+
+  .header-stats {
+    font-size: 12px;
+  }
+}
+
+/* Controls */
+.controls {
+  grid-area: controls;
+  border: 1px solid gray;
+  display: grid;
+  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "song-summary"
+                       "time"
+                       "buttons";
+}
+
+.song-summary {
+  grid-area: song-summary;
+  border: inherit;
+  display: grid;
+  /* grid-gap: 4px; */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas: "current-song current-song"
+                       "playback-speed volume"
+}
+
+.display-window {
+  grid-area: current-song;
+  border: inherit;
+  margin: 5px;
+  background: black;
+  color: #52e300;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas: "currently-playing currently-playing"
+                       "play-pause time-left";
+  align-items: center;
+  overflow: hidden;
+}
+
+.currently-playing {
+  grid-area: currently-playing;
+  transform:translateX(100%);
+  animation: display-window 15s linear infinite;
+  }
+
+@keyframes display-window {
+  0%   { 
+  -moz-transform: translateX(100%); /* Firefox bug fix */
+  -webkit-transform: translateX(100%); /* Firefox bug fix */
+  transform: translateX(100%); 		
+  }
+  100% { 
+  -moz-transform: translateX(-100%); /* Firefox bug fix */
+  -webkit-transform: translateX(-100%); /* Firefox bug fix */
+  transform: translateX(-100%); 
+  }
+ }
+
+.play-pause {
+  grid-area: play-pause;
+  color: gray;
+  margin: inherit;
+  /* justify-content: left; */
+}
+
+.time-left {
+  grid-area: time-left;
+  margin: inherit;
+  display: grid;
+  justify-content: end;
+
+}
+/* .mini-spectogram {
+  grid-area: visuals;
+  margin: inherit;
+  display: grid;
+  align-content: end;
+} */
+
+
+.playback-speed {
+  grid-area: playback-speed;
+  justify-self: center;
+  align-self: center;
+}
+
+.volume-control {
+  grid-area: volume;
+  margin: 5px;
+  justify-self: center;
+  align-self: center;
+}
+
+/* Song played time slider */
+.song-time-left {
+  grid-area: time;
+  align-self: end;
+  justify-self: center;
+}
+
+input[type=range].song-time {
+  width: 285px;
+}
+
+.player-control-buttons {
+  grid-area: buttons;
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: space-around;
+  /* align-items: start; */
+}
+
+/* Visualisation */
+.visualisation {
+  border: 1px solid gray;
+  grid-area: visualisation;
+  align-self: end;
+}
+
+/* Equalizer */
+.equalizer {
+  border: 1px solid gray;
+  grid-area: equalizer;
+  display: grid;
+  grid-template-columns: 2fr repeat(10, 1fr);
+  /* justify-items: center; */
+  align-items: center;
+}
+
+.slider-wrapper {
+  display: inline-block;
+  width: 20px;
+  height: 150px;
+  padding: 0;
+}
+
+.slider-wrapper input {
+  width: 150px;
+  height: 25px;
+  margin: 0;
+  transform-origin: 75px 75px;
+  transform: rotate(-90deg);
+}
+
+/*  Playlist */
+.playlists {
+  grid-area: playlists;
+  display: grid;
+  grid-template-rows: 25px 4fr 1fr;
+  grid-template-areas: "playlists-header" "playlists" "playlists-utility";
+  border: 1px solid gray;
+  padding: 0 10px;
+}
+
+.playlists-header {
+  grid-area: playlists-header;
+  font-size: 14px;
+}
+
+.playlists-list {
+  grid-area: playlists;
+  padding: 2px;
+  list-style-type: none;
+  display: grid;
+  font-size: 10px;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(10, 1fr);
+  background: black;
+  padding: 2px;
+  border: 2px solid gray;
+}
+
+.playlist-info {
+  display: grid;
+  color: #52e300;
+  grid-template-columns: auto 8fr auto;
+}
+
+.playlists-utility {
+  grid-area: playlists-utility;
+}
+
+/* Songs */
+.songs {
+  grid-area: songs;
+  display: grid;
+  grid-template-rows: 25px 4fr 1fr;
+  grid-template-areas: "songs-header" "songs" "utility";
+  border: 1px solid gray;
+  padding: 0 10px;
+}
+
+h6 {
+  justify-self: center;
+  align-self: center;
+}
+
+.songs-header {
+  grid-area: songs-header;
+  font-size: 14px;
+}
+
+.songs-list {
+  grid-area: songs;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(10, 1fr);
+  background: black;
+  font-size: 10px;
+  padding: 2px;
+  list-style-type: none;
+  border: 2px solid gray;
+
+}
+
+.song-info {
+  display: grid;
+  color: #52e300;
+  grid-template-columns: auto 8fr auto;
+}
+
+.songs-utility {
+  grid-area: utility;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: "orderBy time";
+  justify-items: center;
+  align-items: flex-start;
+}
+
+.songs-orderBy {
+  grid-area: orderBy;
+  justify-self: start;
+}
+
+.songs-total-time {
+  grid-area: time;
+  justify-self: end;
+}
+
+
+#canvas-main-visualisation {
+  width: 100%;
+  height: auto;
+  /* max-height: 400px; */
+}
