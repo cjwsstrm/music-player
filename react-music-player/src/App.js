@@ -50,19 +50,11 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <div className='AppSpot'>
-          <a href='http://localhost:8888'> Login to Spotify </a>
-          <div>
-            Now Playing: {this.state.nowPlaying.name}
-          </div>
-          <div>
-            <img src={this.state.nowPlaying.albumArt} style={{ height: 150 }} />
-          </div>
-          {this.state.loggedIn &&
-            <button onClick={() => this.getNowPlaying()}>
-              Check Now Playing
-            </button>
-          }
+        <div id="login">
+          <h1>First, log in to spotify</h1>
+          <a href="/login">Log in</a>
+        </div>
+        <div id="loggedin">
         </div>
         <Player />
       </div>
