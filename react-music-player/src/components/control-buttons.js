@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class ControlButtons extends Component {
+  static propTypes = {
+    play: PropTypes.func,
+    pause: PropTypes.func
+  };
+
   constructor(props) {
     super(props);
     this.play = this.props.play.bind(this);
     this.pause = this.props.pause.bind(this);
   }
 
-  // play() {
-  //   console.log(this.props.audioRef);
-  //   // this.props.audioRef.play();
-  // }
 
-  // pause() {
-  //   // this.props.audioRef.pause();
-  // }
 
   render() {
     return (
@@ -25,7 +24,7 @@ export default class ControlButtons extends Component {
         <a onClick={this.play} className="play">
           <i className="fas fa-play"></i>
         </a>
-        <a  onClick={this.pause} className="pause">
+        <a onClick={this.pause} className="pause">
           <i className="fas fa-pause"></i>
         </a>
         <a className="next">
