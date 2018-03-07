@@ -15,6 +15,7 @@ function setupWebAudio() {
     var audio = document.createElement('audio');
     audio.src = './bloc1.mp3';
     audio.controls = 'true';
+    // audio.crossOrigin = 'anonymous';
     document.body.appendChild(audio);
     audio.style.width = 400 + 'px';
 
