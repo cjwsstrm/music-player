@@ -11,6 +11,8 @@ export default class ControlButtons extends Component {
     super(props);
     this.play = this.props.play.bind(this);
     this.pause = this.props.pause.bind(this);
+    this.repeat = this.props.repeat.bind(this);
+    this.stop = this.props.stop.bind(this);
   }
 
 
@@ -30,14 +32,14 @@ export default class ControlButtons extends Component {
         <a className="next">
           <i className="fas fa-step-forward"></i>
         </a>
-        <a className="stop">
+        <a onClick={this.stop} className="stop">
           <i className="fas fa-stop"></i>
         </a>
         {/* <!-- <a className="show-playlist"></a> --> */}
         <a className="shuffle">
           <i className="fas fa-random"></i>
         </a>
-        <a className="repeat">
+        <a onClick={this.repeat} className="repeat">
           <i className="fas fa-redo"></i>
           {/* <!-- <i className="fas fa-repeat-1"></i> --> */}
         </a>

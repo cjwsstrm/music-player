@@ -8,15 +8,26 @@ export default class Controls extends Component {
     super(props);
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
+    this.repeat = this.repeat.bind(this);
+    this.stop = this.stop.bind(this);
   }
 
   play() {
-    // console.log(this.audioRef);
+    console.log(this.audioRef.duration);
     this.audioRef.play();
   }
 
   pause() {
     this.audioRef.pause();
+  }
+
+  stop() {
+    this.audioRef.load();
+  }
+
+  repeat() {
+    this.audioRef.loop=true;
+    console.log('now repeating song');
   }
 
   render() {
@@ -34,7 +45,9 @@ export default class Controls extends Component {
         <DisplayWindow />
         <SongDuration />
         <ControlButtons play={this.play}
-          pause={this.pause} />
+          pause={this.pause}
+          repeat={this.repeat}
+          stop={this.stop} />
       </div>
     );
   }
