@@ -15,7 +15,7 @@ export default class Visualiser extends Component {
         var files = this.files;
         audio.src = URL.createObjectURL(files[0]);
         audio.load();
-        audio.style.width = 400 + 'px';
+        // audio.style.width = 400 + 'px';
 
         var audioContext = new window.AudioContext();
         analyser = audioContext.createAnalyser();
@@ -42,7 +42,6 @@ export default class Visualiser extends Component {
             ctx.strokeRect(i, canvas.height - freqByteData[i] * 2, 10, canvas.height);
           }
         }
-        // audio.play();
         draw();
       };
     };
