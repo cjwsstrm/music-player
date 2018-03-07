@@ -10,8 +10,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <input type="file" id="thefile" accept="audio/*" />
-        <audio id="audio" controls></audio>
         <Player />
       </div>
     );

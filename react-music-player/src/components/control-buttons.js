@@ -1,32 +1,47 @@
 import React, { Component } from 'react';
 
 export default class ControlButtons extends Component {
+  constructor(props) {
+    super(props);
+    this.play = this.props.play.bind(this);
+    this.pause = this.props.pause.bind(this);
+  }
+
+  // play() {
+  //   console.log(this.props.audioRef);
+  //   // this.props.audioRef.play();
+  // }
+
+  // pause() {
+  //   // this.props.audioRef.pause();
+  // }
+
   render() {
     return (
       <div className="player-control-buttons">
-        <button className="previous">
+        <a className="previous">
           <i className="fas fa-step-backward"></i>
-        </button>
-        <button className="play">
+        </a>
+        <a onClick={this.play} className="play">
           <i className="fas fa-play"></i>
-        </button>
-        <button className="pause">
+        </a>
+        <a  onClick={this.pause} className="pause">
           <i className="fas fa-pause"></i>
-        </button>
-        <button className="next">
+        </a>
+        <a className="next">
           <i className="fas fa-step-forward"></i>
-        </button>
-        <button className="stop">
+        </a>
+        <a className="stop">
           <i className="fas fa-stop"></i>
-        </button>
-        {/* <!-- <button className="show-playlist"></button> --> */}
-        <button className="shuffle">
+        </a>
+        {/* <!-- <a className="show-playlist"></a> --> */}
+        <a className="shuffle">
           <i className="fas fa-random"></i>
-        </button>
-        <button className="repeat">
+        </a>
+        <a className="repeat">
           <i className="fas fa-redo"></i>
           {/* <!-- <i className="fas fa-repeat-1"></i> --> */}
-        </button>
+        </a>
       </div>
     );
   }
