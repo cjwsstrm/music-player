@@ -1,9 +1,9 @@
 /* Main container */
 .App {
   margin: auto;
-  max-width:960px;
+  max-width:600px;
   height: 100%vh;
-  background: white;
+  background: blue;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr;
@@ -23,7 +23,7 @@
   display: grid;
   grid-template-columns: 1fr 3fr 2fr;
   grid-template-areas: "login logo stats";
-  background: rgba(176, 196, 222, 0.5);
+  background: rgba(139, 140, 154, 0.75);
   /* justify-content: center; */
   justify-items: center;
   align-items: center;
@@ -51,7 +51,7 @@
 }
 /* Main player container */
 .player-container {
-  height: auto;
+  height: 800px;
   padding: 5px;
   border: 1px solid gray;
   border-radius: 5px;
@@ -62,22 +62,26 @@
   grid-gap: 10px;
   grid-template-columns: 2fr 3fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "controls   visualisation" 
-                       "equalizer  visualisation" 
-                       "playlists  songs" 
-                       "playlists  songs";
+  grid-template-areas: 
+                      "visualisation  visualisation"
+                      "visualisation  visualisation"
+                      "controls   songs" 
+                      "equalizer  songs";
   font-size: 12px;
 }
 
 @media (max-width: 800px) {
   .player-container {
+    /* width:100%; */
+    height: 100%;
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 0.5fr;
     grid-template-areas:
     "visualisation"
     "controls"
-    "equalizer"
-    "playlists"
     "songs"
+    "equalizer"
+    /* "playlists" */
   }
 
   .header-stats {
@@ -168,6 +172,7 @@
   grid-area: playback-speed;
   justify-self: center;
   align-self: center;
+  text-align: center;
 }
 
 .volume-control {
@@ -175,6 +180,7 @@
   margin: 5px;
   justify-self: center;
   align-self: center;
+  text-align: center;
 }
 
 /* Song played time slider */
@@ -182,6 +188,7 @@
   grid-area: time;
   align-self: end;
   justify-self: center;
+  text-align: center;
 }
 
 input[type=range].song-time {
@@ -199,9 +206,19 @@ input[type=range].song-time {
 
 /* Visualisation */
 .visualisation {
+  width: 100%;
+  height: 100%;
   border: 1px solid gray;
   grid-area: visualisation;
   align-self: end;
+  justify-content: center;
+}
+
+#canvas-main-visualisation {
+  width: 100%;
+  /* height: auto; */
+  /* align-self: end; */
+  max-height: 350px;
 }
 
 /* Equalizer */
@@ -230,7 +247,7 @@ input[type=range].song-time {
 }
 
 /*  Playlist */
-.playlists {
+/* .playlists {
   grid-area: playlists;
   display: grid;
   grid-template-rows: 25px 4fr 1fr;
@@ -265,14 +282,14 @@ input[type=range].song-time {
 
 .playlists-utility {
   grid-area: playlists-utility;
-}
+} */
 
 /* Songs */
 .songs {
   grid-area: songs;
   display: grid;
-  grid-template-rows: 25px 4fr 1fr;
-  grid-template-areas: "songs-header" "songs" "utility";
+  grid-template-rows: 9fr 1fr;
+  grid-template-areas: "songs" "utility";
   border: 1px solid gray;
   padding: 0 10px;
 }
@@ -282,16 +299,16 @@ h6 {
   align-self: center;
 }
 
-.songs-header {
+/* .songs-header {
   grid-area: songs-header;
   font-size: 14px;
-}
+} */
 
 .songs-list {
   grid-area: songs;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-rows: repeat(25, 1fr);
   background: black;
   font-size: 10px;
   padding: 2px;
@@ -301,18 +318,23 @@ h6 {
 }
 
 .song-info {
+  /* height: 25px; */
   display: grid;
   color: #52e300;
   grid-template-columns: auto 8fr auto;
 }
 
+.song-info:hover {
+  background: blue;
+}
+
 .songs-utility {
   grid-area: utility;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-areas: "orderBy time";
-  justify-items: center;
-  align-items: flex-start;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "orderBy fileUploadButton time";
+  justify-content: space-around;
+  align-items: center;
 }
 
 .songs-orderBy {
@@ -320,14 +342,12 @@ h6 {
   justify-self: start;
 }
 
+.songs-fileUploadButton {
+  grid-area: fileUploadButton;
+  justify-self: center;
+}
+
 .songs-total-time {
   grid-area: time;
   justify-self: end;
-}
-
-
-#canvas-main-visualisation {
-  width: 100%;
-  height: auto;
-  /* max-height: 400px; */
 }

@@ -20,7 +20,7 @@ export default class Visualiser extends Component {
       };
       var audioContext = new window.AudioContext();
       analyser = audioContext.createAnalyser();
-      analyser.fftsize = 256;
+      // analyser.fftsize = 256;
       var source = audioContext.createMediaElementSource(audio);
 
       canvas = document.getElementById('canvas-main-visualisation');
@@ -39,8 +39,8 @@ export default class Visualiser extends Component {
 
         for (var i = 1; i < freqByteData.length; i += 10) {
           ctx.fillStyle = `orange`;
-          ctx.fillRect(i, canvas.height - freqByteData[i] * 2, 10, canvas.height);
-          ctx.strokeRect(i, canvas.height - freqByteData[i] * 2, 10, canvas.height);
+          ctx.fillRect(i, canvas.height - freqByteData[i] * 3, 10, canvas.height);
+          ctx.strokeRect(i, canvas.height - freqByteData[i] * 3, 10, canvas.height);
         }
       }
       draw();

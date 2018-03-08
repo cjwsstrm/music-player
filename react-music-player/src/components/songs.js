@@ -13,9 +13,9 @@ export default class Songs extends Component {
 
     return (
       <div className="songs">
-        <h6 className="songs-header">
+        {/* <h6 className="songs-header">
           ======== Songs =========
-        </h6>
+        </h6> */}
         <ul className="songs-list">
           <li className="song-info">
             <div className="song-index">
