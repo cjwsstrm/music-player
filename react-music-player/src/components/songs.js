@@ -42,10 +42,10 @@ export default class Songs extends Component {
         </ul>
         <div className="songs-utility">
           <button className="songs-orderBy">order by</button>
+          <button className="fileUploadButton" onClick={this.chooseFile}>Load song(s)</button>
           <div className="songs-total-time">
             0:00 / 80:00
           </div>
-          <button className="fileUploadButton" onClick={this.chooseFile}>Load song(s)</button>
         </div>
       </div>
     );

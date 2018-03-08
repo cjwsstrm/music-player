@@ -17,15 +17,25 @@ export default class Controls extends Component {
     this.stop = this.stop.bind(this);
     this.displayCurrentSong = this.displayCurrentSong.bind(this);
   }
-   
-  
+
+
   displayCurrentSong() {
     var currentFile = document.getElementById('thefile');
-    var currentFileName = currentFile.files[0].name; 
+    var currentFileName = currentFile.files[0].name;
     this.setState({
       song: currentFileName
     });
-    console.log(`Source from file: ${currentFile.files[0].name}`);
+
+    let addedFiles = [];
+    function listFiles() {
+      for (var i = 0, numFiles = currentFile.files.length; i < numFiles; i++) {
+        // console.log(currentFile.files[i].name);
+        addedFiles.push(currentFile.files[i]);
+      }
+    }
+    listFiles();
+
+    console.log(`Source(s) from file: ${addedFiles[0].name}`);
   }
 
   play() {
@@ -44,7 +54,7 @@ export default class Controls extends Component {
   }
 
   repeat() {
-    this.audioRef.loop=true;
+    this.audioRef.loop = true;
     console.log('now repeating song');
   }
 
