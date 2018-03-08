@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 
 export default class DisplayWindow extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  // static propTypes = {
+  //   displayCurrentSong: this.propTypes.func
+  // }
+
   render() {
     return (
       <div className="song-summary">
         <div className="display-window">
           <div className="currently-playing">
-            1. We Were Promised Jetpacks - Quite Little Voices
+            {/* 1. We Were Promised Jetpacks - Quite Little Voices */}
+            {this.props.songName}
           </div>
           <div className="play-pause">
             <i className="fas fa-play"></i>
