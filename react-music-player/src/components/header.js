@@ -4,9 +4,9 @@ export default class Header extends Component {
   render() {
     return (
       <div className="header">
-        <div className="header-login">
+        {/* <div className="header-login">
           Login to your Spotify account
-        </div>
+        </div> */}
         <div className="header-logo">
           Music Player
         </div>

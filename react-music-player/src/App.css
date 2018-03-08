@@ -21,20 +21,20 @@
 .header {
   grid-area: header;
   display: grid;
-  grid-template-columns: 1fr 3fr 2fr;
-  grid-template-areas: "login logo stats";
+  grid-template-columns: 3fr 2fr;
+  grid-template-areas: "logo stats";
   background: rgba(139, 140, 154, 0.75);
   /* justify-content: center; */
   justify-items: center;
   align-items: center;
 }
 
-.header-login {
-  /* display: grid; */
+/* .header-login {
+  display: grid;
   grid-area: login;
   justify-items: center;
   align-items: center;
-}
+} */
 
 .header-logo {
   /* display: grid; */
@@ -114,8 +114,8 @@
 
 .display-window {
   grid-area: current-song;
-  border: inherit;
-  margin: 5px;
+  border-bottom: inherit;
+  /* margin: 5px; */
   background: black;
   color: #52e300;
   display: grid;
@@ -123,6 +123,7 @@
   grid-template-rows: 2fr 1fr;
   grid-template-areas: "currently-playing currently-playing"
                        "play-pause time-left";
+  /* justify-items: center; */
   align-items: center;
   overflow: hidden;
 }
@@ -149,13 +150,13 @@
 .play-pause {
   grid-area: play-pause;
   color: gray;
-  margin: inherit;
+  margin: 5px;
   /* justify-content: left; */
 }
 
 .time-left {
   grid-area: time-left;
-  margin: inherit;
+  margin: 5px;
   display: grid;
   justify-content: end;
 
@@ -204,8 +205,15 @@ input[type=range].song-time {
   align-items: center;
 }
 
+a:hover {
+  cursor: pointer;
+  color: rgba(139, 140, 154, 0.75);
+  ;
+}
+
 /* Visualisation */
 .visualisation {
+  background:black;
   width: 100%;
   height: 100%;
   border: 1px solid gray;
@@ -291,7 +299,7 @@ input[type=range].song-time {
   grid-template-rows: 9fr 1fr;
   grid-template-areas: "songs" "utility";
   border: 1px solid gray;
-  padding: 0 10px;
+  /* padding: 0 10px; */
 }
 
 h6 {
@@ -305,6 +313,7 @@ h6 {
 } */
 
 .songs-list {
+  margin: 0;
   grid-area: songs;
   display: grid;
   grid-template-columns: 1fr;
@@ -313,7 +322,7 @@ h6 {
   font-size: 10px;
   padding: 2px;
   list-style-type: none;
-  border: 2px solid gray;
+  border-bottom: inherit;
 
 }
 
@@ -326,6 +335,13 @@ h6 {
 
 .song-info:hover {
   background: blue;
+  cursor: pointer;
+}
+
+.song {
+  overflow: hidden;
+  white-space: nowrap; 
+  text-overflow: ellipsis;
 }
 
 .songs-utility {
@@ -333,13 +349,13 @@ h6 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: "orderBy fileUploadButton time";
-  justify-content: space-around;
+  /* justify-content: space-between; */
   align-items: center;
 }
 
 .songs-orderBy {
   grid-area: orderBy;
-  justify-self: start;
+  justify-self: center;
 }
 
 .songs-fileUploadButton {
@@ -349,5 +365,5 @@ h6 {
 
 .songs-total-time {
   grid-area: time;
-  justify-self: end;
+  justify-self: center;
 }
