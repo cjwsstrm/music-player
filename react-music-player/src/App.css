@@ -13,6 +13,10 @@
   justify-content: center;
 }
 
+#thefile {
+  display: none;
+}
+
 /* Header styling */
 .header {
   grid-area: header;

@@ -9,7 +9,7 @@ export default class Controls extends Component {
 
     this.state = {
       song: ''
-    }
+    };
 
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
@@ -20,11 +20,12 @@ export default class Controls extends Component {
    
   
   displayCurrentSong() {
-    var file = this.fileInput.files[0]; 
+    var currentFile = document.getElementById('thefile');
+    var currentFileName = currentFile.files[0].name; 
     this.setState({
-      song: file.name
+      song: currentFileName
     });
-    // console.log(`Source from file: ${this.state.song}`);
+    console.log(`Source from file: ${currentFile.files[0].name}`);
   }
 
   play() {
@@ -50,11 +51,6 @@ export default class Controls extends Component {
   render() {
     return (
       <div className="controls">
-        <input
-          type="file"
-          id="thefile"
-          accept="audio/*"
-          ref={input => { this.fileInput = input; }} />
         <audio
           id="audio"
           ref={(input) => { this.audioRef = input; }}>

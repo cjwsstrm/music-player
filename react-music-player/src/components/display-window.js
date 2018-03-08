@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import propTypes from 'prop-types';
+// import propTypes from 'prop-types';
 
 export default class DisplayWindow extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   // static propTypes = {
   //   displayCurrentSong: this.propTypes.func

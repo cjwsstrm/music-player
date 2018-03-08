@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 
 export default class Songs extends Component {
+
+  chooseFile() {
+    var file = document.getElementById('thefile');
+    file.click();
+  }
+
+
   render() {
+    this.chooseFile = this.chooseFile.bind(this);
+
     return (
       <div className="songs">
         <h6 className="songs-header">
@@ -36,6 +45,7 @@ export default class Songs extends Component {
           <div className="songs-total-time">
             0:00 / 80:00
           </div>
+          <button className="fileUploadButton" onClick={this.chooseFile}>Load song(s)</button>
         </div>
       </div>
     );
