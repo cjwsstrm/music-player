@@ -43,10 +43,16 @@ export default class Controls extends Component {
     console.log(`Source from <audio> (it's a blob): ${this.audioRef.currentSrc}`);
     this.audioRef.play();
     this.displayCurrentSong();
+    // var elem = document.getElementById("visualisation");
+    // elem.classList.toggle('visualiser-fullscreen');
+    // elem.webkitRequestFullscreen();
   }
 
   pause() {
     this.audioRef.pause();
+    // var elem = document.getElementById("visualisation");
+    // // console.log(elem);
+    // elem.classList.toggle('visualiser-fullscreen');
   }
 
   stop() {

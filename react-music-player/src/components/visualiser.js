@@ -50,7 +50,7 @@ export default class Visualiser extends Component {
 
   render() {
     return (
-      <div className="visualisation">
+      <div className="visualisation" id="visualisation">
         <canvas id="canvas-main-visualisation"> </canvas>
       </div>
     );
