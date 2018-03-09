@@ -225,9 +225,6 @@ a:hover {
 #canvas-main-visualisation {
   width: inherit;
   height: inherit;
-  /* align-self: end; */
-  /* max-height: 350px; */
-  /* margin-left: 2px; */
 }
 
 .visualiser-fullscreen {
