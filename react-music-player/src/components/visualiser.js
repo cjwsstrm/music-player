@@ -37,33 +37,42 @@ export default class Visualiser extends Component {
       var bufferLength = analyser.frequencyBinCount;
       var dataArray = new Uint8Array(bufferLength);
 
+
+      // Bar visualisation
+      // function draw() {
+      //   requestAnimationFrame(draw);
+
+      //   analyser.getByteFrequencyData(dataArray);
+
+      //   ctx.clearRect(0, 0, canvas.width, canvas.height);
+      //   var barWidth = (canvas.width / bufferLength);
+      //   var barHeight;
+      //   var x = 0;
+
+      //   for (var i = 0; i < bufferLength; i++) {
+      //     barHeight = dataArray[i];
+      //     var gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      //     gradient.addColorStop(0.5, 'orange');
+      //     gradient.addColorStop(0.75, 'yellow');
+      //     gradient.addColorStop(1, 'green');
+      //     ctx.fillStyle = gradient;
+      //     ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+
+      //     x += barWidth + 1;
+      //   }
+      // }
+      // draw();
+
+
+      // Wave visualisation
+      
       function draw() {
+
         requestAnimationFrame(draw);
 
-        // analyser.getByteFrequencyData(dataArray);
         analyser.getByteTimeDomainData(dataArray);
 
-
-        ctx.fillStyle = 'rgb(0, 0, 0)';
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        // Bar visualisation
-        // var barWidth = (canvas.width / bufferLength) * 1.5;
-        // var barHeight;
-        // var x = 0;
-
-        // for (var i = 0; i < bufferLength; i++) {
-        //   barHeight = dataArray[i];
-        //   var gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-        //   gradient.addColorStop(0.5, 'orange');
-        //   gradient.addColorStop(0.75, 'yellow');
-        //   gradient.addColorStop(1, 'green');
-        //   ctx.fillStyle = gradient;
-        //   ctx.fillRect(x, canvas.height - barHeight, barWidth, (barHeight));
-
-        //   x += barWidth + 1;
-
-        // Wave visualisation
         ctx.lineWidth = 2;
         ctx.strokeStyle = 'white';
 
@@ -87,14 +96,14 @@ export default class Visualiser extends Component {
         }
         ctx.lineTo(canvas.width, canvas.height / 2);
         ctx.stroke();
-
       }
+
       draw();
     };
 
   }
 
-  
+
 
   render() {
     return (

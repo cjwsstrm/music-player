@@ -66,6 +66,13 @@ export default class Controls extends Component {
     console.log('now repeating song');
   }
 
+  // setVolume(val) {
+  //   var player = document.getElementById('audio');
+  //   console.log('Before: ' + player.volume);
+  //   player.volume = val / 100;
+  //   console.log('After: ' + player.volume);
+  // }
+
   render() {
     return (
       <div className="controls">

@@ -4,7 +4,7 @@ export default class SongDuration extends Component {
   render() {
     return (
       <div className="song-duration">
-        time left
+        {/* time left */}
         <input className="song-time" type="range" />
       </div>
     );

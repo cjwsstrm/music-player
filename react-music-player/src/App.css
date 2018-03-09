@@ -193,7 +193,7 @@
 }
 
 input[type=range].song-time {
-  width: 285px;
+  width: 250px;
 }
 
 .player-control-buttons {
@@ -207,7 +207,7 @@ input[type=range].song-time {
 
 a:hover {
   cursor: pointer;
-  color: rgba(139, 140, 154, 0.75);
+  color: rgba(139, 140, 154, 0.25);
   ;
 }
 
