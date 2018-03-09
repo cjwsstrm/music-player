@@ -57,9 +57,9 @@ export default class Visualiser extends Component {
           gradient.addColorStop(0.75, 'yellow');
           gradient.addColorStop(1, 'green');
           ctx.fillStyle = gradient;
-          ctx.fillRect(x, canvas.height - barHeight * 3, barWidth, (barHeight * 3));
+          ctx.fillRect(x, canvas.height - barHeight * 3.5, barWidth, (barHeight * 3.5));
 
-          x += barWidth + 1.35;
+          x += barWidth + 1.2;
 
         }
       }

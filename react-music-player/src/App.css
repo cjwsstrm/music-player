@@ -218,15 +218,16 @@ a:hover {
   height: 100%;
   border: 1px solid gray;
   grid-area: visualisation;
-  align-self: end;
-  justify-content: center;
+  /* align-self: end; */
+  /* justify-content: center; */
 }
 
 #canvas-main-visualisation {
-  width: 100%;
-  /* height: auto; */
+  width: inherit;
+  height: inherit;
   /* align-self: end; */
-  max-height: 350px;
+  /* max-height: 350px; */
+  /* margin-left: 2px; */
 }
 
 .visualiser-fullscreen {
