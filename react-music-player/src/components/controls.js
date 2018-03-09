@@ -21,12 +21,14 @@ export default class Controls extends Component {
 
   displayCurrentSong() {
     var currentFile = document.getElementById('thefile');
-    var currentFileName = currentFile.files[0].name;
-    this.setState({
-      song: currentFileName
-    });
-
     let addedFiles = [];
+    if (currentFile.files[0]) {
+      var currentFileName = currentFile.files[0].name;
+      this.setState({
+        song: currentFileName
+      });
+
+    }
     function listFiles() {
       for (var i = 0, numFiles = currentFile.files.length; i < numFiles; i++) {
         // console.log(currentFile.files[i].name);
@@ -35,7 +37,7 @@ export default class Controls extends Component {
     }
     listFiles();
 
-    console.log(`Source(s) from file: ${addedFiles[0].name}`);
+    // console.log(`Source(s) from file: ${addedFiles[0].name}`);
   }
 
   play() {
