@@ -3,7 +3,7 @@
   margin: auto;
   max-width:600px;
   height: 100%vh;
-  background: blue;
+  background: white;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr;
