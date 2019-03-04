@@ -10,13 +10,17 @@ export default class Visualiser extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.visualise = this.visualise.bind(this);
     this.drawVisual;
+    this.source;
+    this.audioContext;
   }
 
   visualise() {
-    console.log('test');
     var analyser, canvas, ctx;
+    if (this.audioContext != undefined) {
+      this.audioContext.close();
+      // console.log('test');
+    }
 
-    // window.onload = function () {
     var file = document.getElementById("thefile");
     var audio = document.getElementById("audio");
 
@@ -34,15 +38,19 @@ export default class Visualiser extends Component {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Set audioContext and properties
-    var audioContext = new window.AudioContext();
-    analyser = audioContext.createAnalyser();
+    this.audioContext = new window.AudioContext(); // move this up a layer
+    analyser = this.audioContext.createAnalyser();
     analyser.minDecibels = -90;
     analyser.maxDecibels = -10;
     analyser.smoothingTimeConstant = .9;
 
-    var source = audioContext.createMediaElementSource(audio);
-    source.connect(analyser);
-    analyser.connect(audioContext.destination);
+    // var source;
+    if (!this.source) {
+      this.source = this.audioContext.createMediaElementSource(audio);
+      this.source.connect(analyser);
+      analyser.connect(this.audioContext.destination);
+    }
+
 
     // Bar visualisation
     if (this.state.currentVisual === 'bars') {
@@ -116,22 +124,25 @@ export default class Visualiser extends Component {
   }
 
   handleClick() {
-    this.visualise();
     if (this.state.currentVisual === 'bars') {
       this.setState({
         currentVisual: 'wave'
       });
       window.cancelAnimationFrame(this.drawVisual);
-      this.visualize;
+      this.visualise();
     }
     if (this.state.currentVisual === 'wave') {
       this.setState({
         currentVisual: 'bars'
       });
+      window.cancelAnimationFrame(this.drawVisual);
+      this.visualise();
     }
-    window.cancelAnimationFrame(this.drawVisual);
-    this.visualize;
-    console.log('currentState: ' + this.state.currentVisual);
+    console.log('newState: ' + this.state.currentVisual);
+  }
+
+  componentDidMount() {
+    this.visualise();
   }
 
   render() {
